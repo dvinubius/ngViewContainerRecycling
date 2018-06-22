@@ -1,20 +1,30 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
+<div class='wrapper'>
+    <h3>Displaying values from data array</h3>
+    <br>
+    <div class="viewer">
+      <app-viewer [dataItems]='dataItems'></app-viewer>
+    </div>
+    <br>
+    <br>
+    <br>
+    <h4>Watch the console</h4>
+    <br>
+    <hr>
+    <br>
+    <button (click)='clicked()'>1</button>
+    <span class="explain"> Empty data array, assign prop to new array holding <strong>the same</strong> objects </span>
+    <p>All viewContainers are reused. The input prop array has changed, but no new viewContainers are needed.</p>
+    <br>
+    <hr>
+    <br>
+    <button (click)='clickedOtherObjects()'>2</button>
+    <span class="explain">Reassign to new array holding with <strong>other</strong> objects</span>
+    <p>New viewContainers are created</p>
+    <br>
+    <hr>
+    <br>
+    <button (click)='clickedTimeout()'>3</button>
+    <span class="explain">Like 1, with <strong>timeout</strong> before reassigning</span>
+    <p>All viewContainers could be reused, but Angular doesn't know in advance. So no recycling.</p>
+</div>

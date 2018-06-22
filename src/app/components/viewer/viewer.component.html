@@ -1,0 +1,6 @@
+<fieldset>
+  <legend> Viewer with [dataArray] as input </legend>
+  <ng-container *ngFor='let item of dataItems'>
+    <app-data-renderer [appSpy]='item.val' [data]='item'></app-data-renderer>
+  </ng-container>
+</fieldset>
